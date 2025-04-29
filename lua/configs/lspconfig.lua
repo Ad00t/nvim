@@ -1,4 +1,17 @@
-require("nvchad.configs.lspconfig").defaults()
+local lspconfig = require("lspconfig")
+local on_attach = require("nvchad.configs.lspconfig").on_attach
+local capabilities = require("nvchad.configs.lspconfig").capabilities
 
-local servers = { "html", "cssls" }
-vim.lsp.enable(servers)
+local servers = { "html", "cssls", "clangd" }
+
+require("mason-lspconfig").setup({
+  ensure_installed = servers,
+})
+
+for _, server in ipairs(servers) do
+  lspconfig[server].setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+  })
+end
+
