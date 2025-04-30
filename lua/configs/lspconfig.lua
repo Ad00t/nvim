@@ -15,3 +15,6 @@ for _, server in ipairs(servers) do
   })
 end
 
+for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
+  vim.api.nvim_set_hl(0, group, {})
+end
