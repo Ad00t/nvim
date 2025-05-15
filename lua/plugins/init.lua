@@ -9,15 +9,29 @@ return {
   {
     "williamboman/mason.nvim",
     opts = {
-      ensure_installed = { "clangd", "html", "cssls" },
+      ensure_installed = {
+        "lua_ls",
+        "clangd",
+        "html",
+        "cssls",
+        "pyright",
+        "mypy",
+        "ruff",
+        "black",
+        "ts_ls",
+      }
     }
   },
 
   {
     "williamboman/mason-lspconfig.nvim",
-    opts = {
-      ensure_installed = { "clangd", "html", "cssls" },
-    },
+  },
+
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    opts = function()
+      return require "configs.null-ls"
+    end,
   },
 
   -- test new blink
