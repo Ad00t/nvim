@@ -15,4 +15,4 @@ for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
   vim.api.nvim_set_hl(0, group, {})
 end
 
-vim.api.nvim_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap=true, silent=true }) 
+vim.api.nvim_set_keymap('n', '<space>d', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap=true, silent=true }) 
