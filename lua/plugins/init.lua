@@ -34,6 +34,11 @@ return {
     end,
   },
 
+  {
+    'numToStr/Comment.nvim',
+    opts = {}
+  },
+
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
 
