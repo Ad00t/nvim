@@ -34,13 +34,16 @@ return {
     end,
   },
 
-  {
-    'numToStr/Comment.nvim',
-    opts = {}
+  { 
+    'nvim-telescope/telescope.nvim',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
+    },
+    config = function()
+      require "configs.telescope"
+    end,
   },
-
-  -- test new blink
-  -- { import = "nvchad.blink.lazyspec" },
 
   {
   	"nvim-treesitter/nvim-treesitter",
