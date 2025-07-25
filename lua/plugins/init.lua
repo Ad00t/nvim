@@ -35,7 +35,7 @@ return {
   },
 
   { 
-    'nvim-telescope/telescope.nvim',
+    "nvim-telescope/telescope.nvim",
     dependencies = {
       'nvim-lua/plenary.nvim',
       { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
@@ -43,6 +43,14 @@ return {
     config = function()
       require "configs.telescope"
     end,
+  },
+
+  {
+    "nvim-tree/nvim-tree.lua",
+    dependencies = { "nvim-tree/nvim-web-devicons" }, 
+    config = function()
+      require "configs.nvim-tree"
+    end
   },
 
   {
