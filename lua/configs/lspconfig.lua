@@ -1,7 +1,24 @@
 local on_attach = require("nvchad.configs.lspconfig").on_attach
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
-local servers = { "lua_ls", "html", "cssls", "clangd", "pyright", "ts_ls" }
+vim.lsp.config("lua_ls", {
+  settings = {
+    Lua = {
+      runtime = { version = "LuaJIT" },
+      diagnostics = { globals = { "vim" } },
+      workspace = {
+        checkThirdParty = false,
+        library = {
+          vim.env.VIMRUNTIME, -- so it sees Neovim's runtime
+          -- or use: "${3rd}/luv/library", "${3rd}/busted/library"
+        },
+      },
+    },
+  },
+})
+vim.lsp.enable("lua_ls")
+
+local servers = { "html", "cssls", "clangd", "pyright", "ts_ls" }
 
 for _, server in ipairs(servers) do
     vim.lsp.config(server, {
@@ -15,4 +32,4 @@ for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
     vim.api.nvim_set_hl(0, group, {})
 end
 
-vim.api.nvim_set_keymap('n', '<space>d', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap=true, silent=true })
+vim.diagnostic.config({ virtual_text = false })

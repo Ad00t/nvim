@@ -31,10 +31,9 @@ dofile(vim.g.base46_cache .. "statusline")
 
 require "options"
 require "nvchad.autocmds"
-require "configs.lspconfig"
 
 vim.schedule(function()
-  require "mappings"
+    require "mappings"
 end)
 
 vim.opt.shell = 'C:\\Program Files\\Git\\usr\\bin\\bash.exe'
