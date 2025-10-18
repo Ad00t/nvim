@@ -1,6 +1,6 @@
 return {
     {
-        "nvim/nvim-lspconfig",
+        "neovim/nvim-lspconfig",
         config = function()
             require "configs.lspconfig"
         end,
@@ -53,17 +53,17 @@ return {
         end
     },
 
-    {
-        "nvim-treesitter/nvim-treesitter",
-        opts = {
-            ensure_installed = {
-                "vim", "lua", "vimdoc", "html", "css", "c", "python", "javascript", "typescript", "cpp", "cmake"
-            },
-            sync_install = false,
-            auto_install = true,
-            highlight = {
-                enable = true,
-            },
-        },
-    },
+    -- {
+    --     "nvim-treesitter/nvim-treesitter",
+    --     opts = {
+    --         ensure_installed = {
+    --             "vim", "lua", "vimdoc", "html", "css", "c", "python", "javascript", "typescript", "cpp", "cmake"
+    --         },
+    --         sync_install = false,
+    --         auto_install = true,
+    --         highlight = {
+    --             enable = true,
+    --         },
+    --     },
+    -- },
 }
