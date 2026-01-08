@@ -7,6 +7,25 @@ return {
     },
 
     -- {
+    --     "nvim-tree/nvim-tree.lua",
+    --     dependencies = { "nvim-tree/nvim-web-devicons" }, 
+    --     config = function()
+    --         require "configs.nvim-tree"
+    --     end
+    -- },
+
+    -- { 
+    --     "nvim-telescope/telescope.nvim",
+    --     dependencies = {
+    --         'nvim-lua/plenary.nvim',
+    --         { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
+    --     },
+    --     config = function()
+    --         require "configs.telescope"
+    --     end,
+    -- },
+
+    -- {
     --     "mason-org/mason-lspconfig.nvim",
     --     opts = {
     --         ensure_installed = {
@@ -30,25 +49,6 @@ return {
     --         require "configs.none-ls"
     --     end,
     -- },
-
-    { 
-        "nvim-telescope/telescope.nvim",
-        dependencies = {
-            'nvim-lua/plenary.nvim',
-            { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
-        },
-        config = function()
-            require "configs.telescope"
-        end,
-    },
-
-    {
-        "nvim-tree/nvim-tree.lua",
-        -- dependencies = { "nvim-tree/nvim-web-devicons" }, 
-        config = function()
-            require "configs.nvim-tree"
-        end
-    },
 
     -- {
     --     "nvim-treesitter/nvim-treesitter",
