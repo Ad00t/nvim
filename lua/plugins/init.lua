@@ -6,33 +6,30 @@ return {
         end,
     },
 
-    {
-        "williamboman/mason.nvim",
-        opts = {
-            ensure_installed = {
-                "lua_ls",
-                "clangd",
-                "html",
-                "cssls",
-                "pyright",
-                "mypy",
-                "ruff",
-                "black",
-                "ts_ls",
-            }
-        }
-    },
+    -- {
+    --     "mason-org/mason-lspconfig.nvim",
+    --     opts = {
+    --         ensure_installed = {
+    --             "lua_ls",
+    --             "clangd",
+    --             "html",
+    --             "cssls",
+    --             "pyright",
+    --             "tsserver",
+    --         },
+    --         automatic_installation = true,
+    --     },
+    --     dependencies = {
+    --         { "mason-org/mason.nvim", opts={} }
+    --     }
+    -- },
 
-    {
-        "williamboman/mason-lspconfig.nvim",
-    },
-
-    {
-        "jose-elias-alvarez/null-ls.nvim",
-        opts = function()
-            return require "configs.null-ls"
-        end,
-    },
+    -- {
+    --     "nvimtools/none-ls.nvim",
+    --     config = function()
+    --         require "configs.none-ls"
+    --     end,
+    -- },
 
     { 
         "nvim-telescope/telescope.nvim",
@@ -47,7 +44,7 @@ return {
 
     {
         "nvim-tree/nvim-tree.lua",
-        dependencies = { "nvim-tree/nvim-web-devicons" }, 
+        -- dependencies = { "nvim-tree/nvim-web-devicons" }, 
         config = function()
             require "configs.nvim-tree"
         end
