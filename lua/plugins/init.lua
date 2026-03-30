@@ -14,34 +14,22 @@ return {
         end
     },
 
-    -- { 
-    --     "nvim-telescope/telescope.nvim",
-    --     dependencies = {
-    --         'nvim-lua/plenary.nvim',
-    --         { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
-    --     },
-    --     config = function()
-    --         require "configs.telescope"
-    --     end,
-    -- },
+    {
+        "zeioth/garbage-day.nvim",
+        event = "VeryLazy",
+        opts = {}
+    },
 
-    -- {
-    --     "mason-org/mason-lspconfig.nvim",
-    --     opts = {
-    --         ensure_installed = {
-    --             "lua_ls",
-    --             "clangd",
-    --             "html",
-    --             "cssls",
-    --             "pyright",
-    --             "tsserver",
-    --         },
-    --         automatic_installation = true,
-    --     },
-    --     dependencies = {
-    --         { "mason-org/mason.nvim", opts={} }
-    --     }
-    -- },
+    { 
+        "nvim-telescope/telescope.nvim",
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
+        },
+        config = function()
+            require "configs.telescope"
+        end,
+    },
 
     -- {
     --     "nvimtools/none-ls.nvim",
