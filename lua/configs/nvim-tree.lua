@@ -6,4 +6,13 @@ require("nvim-tree").setup({
         dotfiles = false,
         git_ignored = false,
     },
+    filesystem_watchers = {
+        enable = true,
+        ignore_dirs = {
+            "node_modules",
+            ".git",
+            "build",
+            "dist",
+        },
+    }
 })
