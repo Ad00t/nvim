@@ -15,6 +15,15 @@ return {
     },
 
     {
+        "goolord/alpha-nvim",
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
+        event = "VimEnter",
+        config = function()
+            require "configs.alpha"
+        end,
+    },
+
+    {
         "zeioth/garbage-day.nvim",
         event = "VeryLazy",
         opts = {}
@@ -32,23 +41,23 @@ return {
     },
 
     -- {
-    --     "nvimtools/none-ls.nvim",
-    --     config = function()
-    --         require "configs.none-ls"
-    --     end,
-    -- },
+        --     "nvimtools/none-ls.nvim",
+        --     config = function()
+            --         require "configs.none-ls"
+            --     end,
+            -- },
 
-    -- {
-    --     "nvim-treesitter/nvim-treesitter",
-    --     opts = {
-    --         ensure_installed = {
-    --             "vim", "lua", "vimdoc", "html", "css", "c", "python", "javascript", "typescript", "cpp", "cmake"
-    --         },
-    --         sync_install = false,
-    --         auto_install = true,
-    --         highlight = {
-    --             enable = true,
-    --         },
-    --     },
-    -- },
-}
+            -- {
+                --     "nvim-treesitter/nvim-treesitter",
+                --     opts = {
+                    --         ensure_installed = {
+                        --             "vim", "lua", "vimdoc", "html", "css", "c", "python", "javascript", "typescript", "cpp", "cmake"
+                        --         },
+                        --         sync_install = false,
+                        --         auto_install = true,
+                        --         highlight = {
+                            --             enable = true,
+                            --         },
+                            --     },
+                            -- },
+                        }

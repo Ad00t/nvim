@@ -8,7 +8,6 @@ local M = {}
 M.base46 = {
     theme = "onedark",
     transparency = "true",
-
 }
 
 M.plugins = "custom.plugins"
@@ -38,7 +37,7 @@ M.ui = {
 
     tabufline = {
         enabled = true,
-        lazyload = true,
+        lazyload = false,
         treeOffsetFt = "NvimTree",
         order = { "treeOffset", "buffers", "tabs", "btns" },
         modules = nil,
