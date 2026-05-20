@@ -44,3 +44,5 @@ vim.api.nvim_create_autocmd("VimEnter", {
         end)
     end,
 })
+
+vim.opt.conceallevel = 0 
