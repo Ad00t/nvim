@@ -21,6 +21,8 @@ telescope.setup({
     pickers = {
         find_files = {
             theme = "dropdown",
+            hidden = true,
+            file_ignore_patterns = { "node_modules", ".git/" }
         }
     }
 })

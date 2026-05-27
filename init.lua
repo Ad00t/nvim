@@ -38,6 +38,10 @@ end)
 
 vim.api.nvim_create_autocmd("VimEnter", {
     callback = function()
+        local first_arg = vim.fn.argv(0)
+        if first_arg and vim.fn.isdirectory(first_arg) == 1 then
+          vim.cmd("cd " .. first_arg)
+        end
         vim.schedule(function()
             require("nvim-tree.api").tree.open()
             vim.cmd("wincmd p")

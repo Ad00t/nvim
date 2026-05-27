@@ -4,7 +4,6 @@ require "nvchad.options"
 
 local o = vim.o
 
-o.shell = 'C:\\Program Files\\Git\\usr\\bin\\bash.exe'
 o.shellcmdflag = '-c'
 o.shellquote = ''
 o.shellxquote = ''
