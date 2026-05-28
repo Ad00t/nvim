@@ -17,6 +17,16 @@ telescope.setup({
                 ["<C-j>"] = actions.preview_scrolling_down,
             },
         },
+        vimgrep_arguments = {
+            "rg",
+			"--color=never",
+			"--no-heading",
+			"--with-filename",
+			"--line-number",
+			"--column",
+			"--hidden",
+			"--smart-case",
+        }
     },
     pickers = {
         find_files = {
