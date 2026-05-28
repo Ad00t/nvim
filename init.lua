@@ -10,6 +10,7 @@ if not vim.uv.fs_stat(lazypath) then
 end
 
 vim.opt.rtp:prepend(lazypath)
+vim.opt.conceallevel = 0 
 
 local lazy_config = require "configs.lazy"
 
@@ -41,6 +42,7 @@ vim.api.nvim_create_autocmd("VimEnter", {
         local first_arg = vim.fn.argv(0)
         if first_arg and vim.fn.isdirectory(first_arg) == 1 then
           vim.cmd("cd " .. first_arg)
+          vim.cmd("Alpha")
         end
         vim.schedule(function()
             require("nvim-tree.api").tree.open()
@@ -48,5 +50,3 @@ vim.api.nvim_create_autocmd("VimEnter", {
         end)
     end,
 })
-
-vim.opt.conceallevel = 0 
