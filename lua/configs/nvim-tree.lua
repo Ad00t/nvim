@@ -15,6 +15,7 @@ require("nvim-tree").setup({
             "dist",
         },
     },
+    auto_reload_on_write = true,
     sync_root_with_cwd = true,
     update_focused_file = {
         enable = true,
