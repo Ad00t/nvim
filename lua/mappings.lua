@@ -16,4 +16,8 @@ map('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
 map('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 map('n', '<leader>fr', builtin.lsp_references, { desc = 'Telescope LSP references' })
 
+map("n", "K", function()
+  vim.lsp.buf.hover({ border = "rounded" })
+end, { desc = "LSP hover information" })
+
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
