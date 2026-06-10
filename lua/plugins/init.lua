@@ -40,6 +40,10 @@ return {
         opts = {}
     },
 
+    {
+        "mrjones2014/smart-splits.nvim",
+    },
+
     { 
         "nvim-telescope/telescope.nvim",
         dependencies = {
