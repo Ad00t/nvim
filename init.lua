@@ -41,8 +41,10 @@ vim.api.nvim_create_autocmd("VimEnter", {
     callback = function()
         local first_arg = vim.fn.argv(0)
         if first_arg and vim.fn.isdirectory(first_arg) == 1 then
+          local buf = vim.api.nvim_get_current_buf()
           vim.cmd("cd " .. first_arg)
           vim.cmd("Alpha")
+          vim.api.nvim_buf_delete(buf, { force = true })
         end
         vim.schedule(function()
             require("nvim-tree.api").tree.open()

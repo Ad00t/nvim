@@ -20,4 +20,12 @@ map("n", "K", function()
   vim.lsp.buf.hover({ border = "rounded" })
 end, { desc = "LSP hover information" })
 
+map({ "n" }, "<C-M-Right>", function()
+  require("nvchad.tabufline").move_buf(1)
+end, { desc = "move buffer right" })
+
+map({ "n" }, "<C-M-Left>", function()
+  require("nvchad.tabufline").move_buf(-1)
+end, { desc = "move buffer left" })
+
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
