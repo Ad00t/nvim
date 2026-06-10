@@ -21,8 +21,8 @@ map('n', '<leader>fr', builtin.lsp_references, { desc = 'Telescope LSP reference
 
 map("n", "K", function() vim.lsp.buf.hover({ border = "rounded" }) end, { desc = "LSP hover information" })
 
-map("n", "<C-S-Left>", function() require("nvchad.tabufline").move_buf(-1) end, { desc = "move buffer left" })
-map("n", "<C-S-Right>", function() require("nvchad.tabufline").move_buf(1) end, { desc = "move buffer right" })
+map("n", "<C-S-h>", function() require("nvchad.tabufline").move_buf(-1) end, { desc = "move buffer left" })
+map("n", "<C-S-l>", function() require("nvchad.tabufline").move_buf(1) end, { desc = "move buffer right" })
 
 map("n", "<A-h>", ss.resize_left, { desc = 'SmartSplit resize left' })
 map("n", "<A-j>", ss.resize_down, { desc = 'SmartSplit resize left' })
