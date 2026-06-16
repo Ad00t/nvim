@@ -52,3 +52,16 @@ vim.api.nvim_create_autocmd("VimEnter", {
         end)
     end,
 })
+
+vim.api.nvim_create_autocmd("WinResized", {
+    callback = function()
+        for _, win in ipairs(vim.api.nvim_list_wins()) do
+            local buf = vim.api.nvim_win_get_buf(win)
+            if vim.bo[buf].filetype == "NvimTree" then
+                local w = vim.api.nvim_win_get_width(win)
+                require("nvim-tree.view").resize(w)
+                return
+            end
+        end
+    end,
+})
