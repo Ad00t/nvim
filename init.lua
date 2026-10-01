@@ -1,6 +1,15 @@
 vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
 vim.g.mapleader = " "
 
+if vim.fn.has("win32") == 1 then
+    vim.opt.shell = "bash.exe"
+    vim.opt.shellcmdflag = "-c"
+    vim.opt.shellredir = ">%s 2>&1"
+    vim.opt.shellpipe = "2>&1 | tee"
+    vim.opt.shellquote = ""
+    vim.opt.shellxquote = ""
+end
+
 -- bootstrap lazy and all plugins
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
