@@ -10,6 +10,11 @@ if vim.fn.has("win32") == 1 then
     vim.opt.shellxquote = ""
 end
 
+vim.opt.autoindent = false
+vim.opt.smartindent = false
+vim.opt.cindent = false
+vim.opt.indentexpr = ''
+
 -- bootstrap lazy and all plugins
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
