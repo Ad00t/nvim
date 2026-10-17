@@ -13,6 +13,7 @@ return {
 
   performance = {
     rtp = {
+      paths = { vim.fn.stdpath("data") .. "/site" },
       disabled_plugins = {
         "2html_plugin",
         "tohtml",

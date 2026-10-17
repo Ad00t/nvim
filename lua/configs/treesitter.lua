@@ -1,13 +1,15 @@
-local treesitter = require('nvim-treesitter') 
+dofile(vim.g.base46_cache .. "syntax")
+dofile(vim.g.base46_cache .. "treesitter")
 
-local parsers = { "vim", "proto", "lua", "vimdoc", "html", "css", "c", "python", "javascript", "typescript", "cpp", "cmake" }
+local parsers = {
+    "vim", "proto", "lua", "vimdoc", "query", "markdown", "markdown_inline",
+    "html", "css", "c", "cpp", "python", "javascript", "typescript", "cmake", "yaml",
+}
 
-treesitter.setup({
-    ensure_installed = parsers,
-    sync_install = false,
-    auto_install = true,
-    highlight = {
-        enable = true,
-    },
-    additional_vim_regex_highlighting = false,
+require("nvim-treesitter").install(parsers)
+
+vim.api.nvim_create_autocmd("FileType", {
+    callback = function(args)
+        pcall(vim.treesitter.start, args.buf)
+    end,
 })

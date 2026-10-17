@@ -16,6 +16,7 @@ return {
 
     {
         "mason-org/mason-lspconfig.nvim",
+        event = { "BufReadPre", "BufNewFile" },
         dependencies = {
             "mason-org/mason.nvim",
             "neovim/nvim-lspconfig",
@@ -57,9 +58,10 @@ return {
 
     {
         "nvim-treesitter/nvim-treesitter",
+        lazy = false,
         build = ":TSUpdate",
         config = function()
             require("configs.treesitter")
-        end
+        end,
     },
 }
